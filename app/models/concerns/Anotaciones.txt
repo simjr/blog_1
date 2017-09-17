@@ -1,0 +1,6 @@
+--> Se consiera una buena práctica mantener los controladores ligeros, sin muhca lógica
+--> Las validaciones se pueden hacer tanto en los controladores como en los modelos cuando 
+    se trata de hacerlas del lado del servidor. PERO, lo mejor es hacer las validaciones
+    en los modelos por lo dicho anteriormente.
+--> También se pueden hacer desde la DB, pero esto es comunmente útil cuando se tienen varias
+    apps trabajando con una misma DB.
