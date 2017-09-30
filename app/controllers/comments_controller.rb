@@ -29,7 +29,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
+        format.json { render :show, status: :created, location: @comment }  
+        format.js
+        #create.js.erb
+        #este es para que el frmulario sea compatible con js
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

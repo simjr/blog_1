@@ -1,14 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<%= render @post %>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+<h2>Comments</h2>
+<div id="comments">
+	<%= render @post.comments.reverse %>
+</div>
+
+	<!-- #el remote: true hace una llamada a JS
+	#para que el formuario funcione el formato llamará al metodo create en comment controllers,
+	#por lo tanto, tenemos que decirle a comments_controllers que sea compatible con JS -->
+
+<%= form_for [@post, @post.comments.new], remote: true do |f| %>
+	
+	<p>
+		<%= f.label :body, "New Comment" %><br />
+		<%= f.text_area :body %>
+	</p>
+
+	<p><%= f.submit "Ad Comment" %></p>
+	<%= f.hidden_field :post_id %>
+<% end %>
+<!-- Aquí post sabe que debe buscar al archivo post.html.rb con el "_" antes de su nombre -->
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

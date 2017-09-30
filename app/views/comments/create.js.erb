@@ -1,0 +1,15 @@
+var new_comment = $("<%= j(render(@comment))%>").hide();
+$('#comments').prepend(new_comment);
+$('#comment_<%= @comment.id %>').fadeIn('slow');
+$('#new_comment')[0].reset();
+
+/* La primera línea creará una nueva variable y lo que hace es representar el contenido y 
+luego se utiliza el método j, 
+para escapar de todo aquello que sea peligroso para JavaScript. 
+Luego me estoy escondiendo esto, esto es un método jQuery 
+oculto y luego voy por un nuevo comentario en el div comment que hemos creado 
+y luego lo voy a hacer aparecer poco a poco con fadeIn slow. 
+Así que el comentario que está debajo del id comment va a aparecer lentamente de lo 
+que da un aspecto agradable el usuario puede ver el nuevo comentario entrando. 
+Y lo último necesario es reestablecer el formulario para que el usuario pueda 
+introducir otro comentario. */ 

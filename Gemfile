@@ -4,7 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+# gema que me permite agregar el div_for
+gem 'record_tag_helper'
 #Gem of Annotated models
 gem 'annotate'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
